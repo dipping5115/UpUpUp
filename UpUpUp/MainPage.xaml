@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="UpUpUp.MainPage"
+    x:Name="RootPage"
+    Title="战斗"
+    BackgroundColor="#1a1a1a">
+
+    <Grid>
+        <ScrollView>
+            <VerticalStackLayout Padding="15" Spacing="10">
+
+                <!-- 关卡显示 -->
+                <Label Text="{Binding LevelText}" FontAttributes="Bold" FontSize="22" 
+                       HorizontalOptions="Center" TextColor="#FFD700"/>
+
+                <!-- 敌人列表 -->
+                <HorizontalStackLayout x:Name="EnemyArea" HorizontalOptions="Center" Spacing="10">
+                    <CollectionView ItemsSource="{Binding Enemies}" HeightRequest="110">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Horizontal" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Border WidthRequest="110" Padding="5" Margin="3"
+                                        StrokeThickness="2" Stroke="#444444" BackgroundColor="#2a2a2a">
+                                    <Border.GestureRecognizers>
+                                        <DropGestureRecognizer Drop="OnEnemyDrop"/>
+                                    </Border.GestureRecognizers>
+                                    <Border.StrokeShape><RoundRectangle CornerRadius="6"/></Border.StrokeShape>
+                                    <VerticalStackLayout Spacing="1">
+                                        <Label Text="{Binding Name}" FontSize="10" HorizontalOptions="Center" TextColor="White"/>
+                                        <Label Text="{Binding IntentText}" FontSize="9" HorizontalOptions="Center" TextColor="#FFB74D"/>
+                                        <Label FontSize="9" HorizontalOptions="Center" TextColor="#FF6B6B">
+                                            <Label.Text><MultiBinding StringFormat="HP:{0}/{1}"><Binding Path="CurrentHP"/><Binding Path="MaxHP"/></MultiBinding></Label.Text>
+                                        </Label>
+                                        <Button Text="选择" FontSize="8" Padding="2,0"
+                                                Command="{Binding BindingContext.SelectEnemyCommand, Source={x:Reference RootPage}}"
+                                                CommandParameter="{Binding}" BackgroundColor="#4CAF50"/>
+                                    </VerticalStackLayout>
+                                </Border>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </HorizontalStackLayout>
+
+                <!-- 玩家状态 -->
+                <StackLayout x:Name="PlayerArea" Orientation="Horizontal" HorizontalOptions="Center">
+                    <StackLayout.GestureRecognizers>
+                        <DropGestureRecognizer Drop="OnPlayerAreaDrop"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Text="HP:" TextColor="White"/>
+                    <Label Text="{Binding PlayerHP}" TextColor="#4ECDC4"/>
+                    <Label Text="/" TextColor="#888888"/>
+                    <Label Text="{Binding PlayerMaxHP}" TextColor="#888888"/>
+                    <Label Text=" 护甲:" TextColor="White" Margin="10,0,0,0"/>
+                    <Label Text="{Binding PlayerBlock}" TextColor="#FFE66D"/>
+                </StackLayout>
+
+                <!-- 手牌 -->
+                <CollectionView ItemsSource="{Binding HandCards}" ItemsLayout="HorizontalList" HeightRequest="150">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border WidthRequest="120" Padding="5" Margin="3" BackgroundColor="#2a2a2a">
+                                <Border.GestureRecognizers>
+                                    <DragGestureRecognizer DragStarting="OnCardDragStarting"/>
+                                </Border.GestureRecognizers>
+                                <Border.StrokeShape><RoundRectangle CornerRadius="6"/></Border.StrokeShape>
+                                <VerticalStackLayout>
+                                    <Label Text="{Binding Name}" FontSize="11" TextColor="White"/>
+                                    <Label Text="{Binding Description}" FontSize="8" TextColor="#AAA" MaxLines="2"/>
+                                    <Button Text="出牌" FontSize="9" Padding="4,1"
+                                        Command="{Binding BindingContext.PlayCardCommand, Source={x:Reference RootPage}}"
+                                        CommandParameter="{Binding .}" BackgroundColor="#4CAF50"/>
+                                </VerticalStackLayout>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <!-- 提示 -->
+                <Label Text="提示: 攻击→敌人, 防御→玩家" FontSize="10" HorizontalOptions="Center" TextColor="#666"/>
+
+                <!-- 牌库 -->
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="20">
+                    <Border StrokeThickness="1" Stroke="#444" Padding="8,3" BackgroundColor="#2a2a2a">
+                        <VerticalStackLayout>
+                            <Label Text="抽牌" FontSize="8" TextColor="#888"/>
+                            <Label Text="{Binding DrawPileCount}" FontSize="14" TextColor="#4ECDC4"/>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Button Text="牌库" Command="{Binding ToggleDeckPreviewCommand}" BackgroundColor="#9C27B0" Padding="10,3"/>
+                    <Border StrokeThickness="1" Stroke="#444" Padding="8,3" BackgroundColor="#2a2a2a">
+                        <VerticalStackLayout>
+                            <Label Text="弃牌" FontSize="8" TextColor="#888"/>
+                            <Label Text="{Binding DiscardPileCount}" FontSize="14" TextColor="#FF6B6B"/>
+                        </VerticalStackLayout>
+                    </Border>
+                </HorizontalStackLayout>
+
+                <!-- 状态 -->
+                <Label Text="{Binding BattleStatusText}" FontSize="12" HorizontalOptions="Center" TextColor="#FFD700"/>
+                <Label Text="胜利!" FontSize="28" HorizontalOptions="Center" TextColor="#FFD700" IsVisible="{Binding IsVictory}"/>
+                <Label Text="游戏结束" FontSize="28" HorizontalOptions="Center" TextColor="#FF6B6B" IsVisible="{Binding IsGameOver}"/>
+
+                <!-- 按钮 -->
+                <Grid ColumnDefinitions="*,*" Margin="0,5,0,0">
+                    <Button Text="结束回合" Command="{Binding EndTurnCommand}" BackgroundColor="#4CAF50"/>
+                    <Button x:Name="BackButton" Text="返回" Clicked="OnBackClicked" BackgroundColor="#FF6B6B" Grid.Column="1"/>
+                </Grid>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- 弹窗 -->
+        <Border IsVisible="{Binding IsDeckPreviewVisible}" BackgroundColor="#80000000">
+            <Border BackgroundColor="#1a1a1a" StrokeThickness="2" Stroke="#444" Padding="15" Margin="20">
+                <Border.StrokeShape><RoundRectangle CornerRadius="10"/></Border.StrokeShape>
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="牌库预览" FontAttributes="Bold" FontSize="18" HorizontalOptions="Center" TextColor="#FFD700"/>
+                    <CollectionView ItemsSource="{Binding AllCards}" HeightRequest="200">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Horizontal" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Border WidthRequest="90" Padding="4" Margin="2" BackgroundColor="#2a2a2a">
+                                    <VerticalStackLayout>
+                                        <Label Text="{Binding Name}" FontSize="9" TextColor="White"/>
+                                        <Label Text="{Binding Description}" FontSize="7" TextColor="#AAA" MaxLines="2"/>
+                                    </VerticalStackLayout>
+                                </Border>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                    <Button Text="关闭" Command="{Binding CloseDeckPreviewCommand}" BackgroundColor="#666"/>
+                </VerticalStackLayout>
+            </Border>
+        </Border>
+    </Grid>
+</ContentPage>

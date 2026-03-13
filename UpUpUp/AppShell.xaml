@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="UpUpUp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:UpUpUp"
+    Title="卡牌游戏"
+    FlyoutBehavior="Disabled">
+
+    <!-- 初始页面：开始页面 -->
+    <ShellContent
+        Title="开始"
+        ContentTemplate="{DataTemplate local:StartPage}"
+        Route="start" />
+
+    <!-- 战斗页面 -->
+    <ShellContent
+        Title="战斗"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="battle" />
+
+</Shell>
