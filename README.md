@@ -1,6 +1,10 @@
 # ⚔️ UpUpUp
 
 <p align="center">
+  <a href="./README.zh-CN.md">中文</a> | <b>English</b>
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/.NET%20MAUI-512BD4?style=for-the-badge&logo=.net&logoColor=white" alt=".NET MAUI">
   <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" alt="C#">
   <img src="https://img.shields.io/badge/XAML-0C54C2?style=for-the-badge&logo=xaml&logoColor=white" alt="XAML">
@@ -11,102 +15,102 @@
 </p>
 
 <p align="center">
-  <b>一款致敬《杀戮尖塔》的卡牌战斗游戏</b><br>
-  策略、运气、勇气 - 你能爬到第几层？
+  <b>A card battling game inspired by Slay the Spire</b><br>
+  Strategy, luck, and courage - how far can you climb?
 </p>
 
 ---
 
-## 🎮 游戏简介
+## 🎮 Game Introduction
 
-**UpUpUp** 是一款回合制卡牌战斗游戏。你将扮演一名勇敢的冒险者，手持卡牌，一层一层地向上攀登，挑战越来越强大的敌人。
+**UpUpUp** is a turn-based card battling game. You play as a brave adventurer, armed with cards, climbing higher and higher, challenging increasingly powerful enemies.
 
-每一关都是新的挑战。每一张牌都可能是翻盘的契机。每一次抉择都将决定你的命运。
+Each level is a new challenge. Every card could be your chance to turn the tables. Every decision will determine your fate.
 
-## ✨ 核心特色
+## ✨ Core Features
 
-### 🎴 卡牌战斗系统
+### 🎴 Card Combat System
 
-构筑你的牌组，运用攻击卡和防御卡与敌人周旋。卡牌组合千变万化，找到属于你的最强流派。
+Build your deck and use attack and skill cards to outmaneuver your enemies. With countless card combinations, find your ultimate strategy.
 
-### 🏰 关卡进阶系统
+### 🏰 Level Progression System
 
-随着关卡提升，解锁更强力的卡牌。关卡越高，奖励越丰厚，但敌人也越危险。
+Unlock more powerful cards as you advance through levels. Higher levels bring greater rewards, but also more dangerous foes.
 
-### ⚔️ 智能敌人AI
+### ⚔️ Intelligent Enemy AI
 
-敌人拥有不同的战斗意图：攻击、防御、蓄力。每回合开始前，你会看到敌人的下一步行动，提前做好应对准备。
+Enemies have different combat intents: Attack, Defend, and Charge. Before each round begins, you'll see the enemy's next move, allowing you to prepare accordingly.
 
-### 🎒 牌库循环机制
+### 🎒 Deck Cycling Mechanic
 
-经典的抽牌堆、弃牌堆循环设计。合理规划手牌使用，在关键时刻打出致命一击。
+Classic draw pile and discard pile cycling design. Plan your hand usage wisely and deliver the finishing blow at the critical moment.
 
-### 🎯 深度策略玩法
+### 🎯 Deep Strategic Gameplay
 
-是全力进攻速战速决？还是稳扎稳打防守反击？每个回合都需要深思熟虑。
+Go all-out for a quick victory, or play it safe with defensive counter-attacks? Every turn requires careful thought.
 
 ---
 
-## 🖼️ 游戏画面
+## 🖼️ Game Screenshots
 
 <p align="center">
 
-### 🎴 战斗场景
+### 🎴 Battle Scene
 ```
 ┌─────────────────────────────────────────┐
 │  HP: ❤️❤️❤️❤️❤️❤️❤️❤️                     │
 │  Block: 🛡️🛡️                            │
 │                                         │
-│         👹 敌人 (意图: ⚔️ 攻击)          │
+│         👹 Enemy (Intent: ⚔️ Attack)     │
 │              HP: 25/30                  │
 │                                         │
 │  ─────────────────────────────────────  │
 │                                         │
 │  [Strike] [Defend] [Strike] [Bash]      │
 │                                         │
-│   抽牌堆: 12  |  弃牌堆: 5  |  能量: 3   │
+│   Draw: 12  |  Discard: 5  |  Energy: 3 │
 └─────────────────────────────────────────┘
 ```
 
-### 📊 卡牌图鉴
+### 📊 Card Catalog
 
-| 卡牌名称 | 类型 | 效果 | 解锁关卡 |
+| Card Name | Type | Effect | Unlock Level |
 |---------|------|------|---------|
-| **Strike** | 攻击 | 造成 6 点伤害 | 第 1 关 |
-| **Defend** | 技能 | 获得 5 点格挡 | 第 1 关 |
-| **Bash** | 攻击 | 造成 8 点伤害 | 第 2 关 |
-| **Heavy Strike** | 攻击 | 造成 12 点伤害 | 第 2 关 |
-| **Power Slash** | 攻击 | 造成 15 点伤害 | 第 3 关 |
-| **Iron Skin** | 技能 | 获得 12 点格挡 | 第 3 关 |
+| **Strike** | Attack | Deal 6 damage | Level 1 |
+| **Defend** | Skill | Gain 5 Block | Level 1 |
+| **Bash** | Attack | Deal 8 damage | Level 2 |
+| **Heavy Strike** | Attack | Deal 12 damage | Level 2 |
+| **Power Slash** | Attack | Deal 15 damage | Level 3 |
+| **Iron Skin** | Skill | Gain 12 Block | Level 3 |
 
 </p>
 
 ---
 
-## 🚀 快速开始
+## 🚀 Quick Start
 
-### 环境要求
+### Requirements
 
-- [.NET 8.0 SDK](https://dotnet.microsoft.com/download) 或更高版本
-- [Visual Studio 2022](https://visualstudio.microsoft.com/) (推荐) 或 Visual Studio Code
-- Android / iOS 模拟器或真机 (移动端测试)
+- [.NET 8.0 SDK](https://dotnet.microsoft.com/download) or higher
+- [Visual Studio 2022](https://visualstudio.microsoft.com/) (recommended) or Visual Studio Code
+- Android / iOS emulator or physical device (for mobile testing)
 
-### 安装步骤
+### Installation
 
-1. **克隆仓库**
+1. **Clone the repository**
 
 ```bash
 git clone https://github.com/yourusername/UpUpUp.git
 cd UpUpUp
 ```
 
-2. **还原依赖**
+2. **Restore dependencies**
 
 ```bash
 dotnet restore
 ```
 
-3. **运行项目**
+3. **Run the project**
 
 **Windows / macOS:**
 ```bash
@@ -114,112 +118,112 @@ dotnet build
 dotnet run
 ```
 
-**Android (需要连接设备或启动模拟器):**
+**Android (requires connected device or emulator):**
 ```bash
 dotnet build -t:Run -f net8.0-android
 ```
 
-**iOS (需要 macOS 和 Xcode):**
+**iOS (requires macOS and Xcode):**
 ```bash
 dotnet build -t:Run -f net8.0-ios
 ```
 
-### Visual Studio 运行
+### Running with Visual Studio
 
-1. 打开 `UpUpUp.sln` 文件
-2. 在顶部工具栏选择目标平台 (Windows / Android / iOS / macOS)
-3. 按 `F5` 或点击运行按钮
+1. Open the `UpUpUp.sln` file
+2. Select target platform from the toolbar (Windows / Android / iOS / macOS)
+3. Press `F5` or click the Run button
 
 ---
 
-## 📁 项目结构
+## 📁 Project Structure
 
 ```
 UpUpUp/
-├── 📱 Platforms/              # 平台特定代码
+├── 📱 Platforms/              # Platform-specific code
 │   ├── Android/
 │   ├── iOS/
 │   ├── MacCatalyst/
 │   └── Windows/
-├── 🎨 Resources/              # 应用资源
-│   ├── Images/               # 图片资源
-│   ├── Raw/                  # 原始资源
-│   └── Styles/               # 样式定义
-├── 🧩 Models/                 # 数据模型
-│   ├── Card.cs               # 卡牌模型
-│   ├── Enemy.cs              # 敌人模型
-│   └── Player.cs             # 玩家模型
-├── 🎮 ViewModels/             # 视图模型 (MVVM)
-│   ├── GameViewModel.cs      # 游戏逻辑
-│   └── CardViewModel.cs      # 卡牌逻辑
-├── 🔄 Converters/             # 值转换器
-├── 📄 App.xaml               # 应用入口
-├── 📄 MainPage.xaml          # 主页面
-├── 📄 StartPage.xaml         # 启动页面
-└── ⚙️ MauiProgram.cs         # MAUI 配置
+├── 🎨 Resources/              # Application resources
+│   ├── Images/               # Image assets
+│   ├── Raw/                  # Raw resources
+│   └── Styles/               # Style definitions
+├── 🧩 Models/                 # Data models
+│   ├── Card.cs               # Card model
+│   ├── Enemy.cs              # Enemy model
+│   └── Player.cs             # Player model
+├── 🎮 ViewModels/             # View models (MVVM)
+│   ├── GameViewModel.cs      # Game logic
+│   └── CardViewModel.cs      # Card logic
+├── 🔄 Converters/             # Value converters
+├── 📄 App.xaml               # Application entry
+├── 📄 MainPage.xaml          # Main page
+├── 📄 StartPage.xaml         # Start page
+└── ⚙️ MauiProgram.cs         # MAUI configuration
 ```
 
 ---
 
-## 🎮 游戏玩法
+## 🎮 Gameplay
 
-### 基本规则
+### Basic Rules
 
-1. **回合制战斗**: 你和敌人轮流行动
-2. **能量系统**: 每回合获得固定能量，打出卡牌消耗能量
-3. **手牌机制**: 每回合从抽牌堆抽取固定数量的卡牌
-4. **牌库循环**: 抽牌堆耗尽时，弃牌堆洗牌后成为新的抽牌堆
+1. **Turn-based Combat**: You and enemies take turns
+2. **Energy System**: Gain fixed energy each turn; playing cards consumes energy
+3. **Hand Mechanic**: Draw fixed number of cards from draw pile each turn
+4. **Deck Cycling**: When draw pile is empty, discard pile shuffles to become new draw pile
 
-### 战斗流程
+### Combat Flow
 
 ```
-开始回合 → 抽牌 → 查看敌人意图 → 打出卡牌 → 结束回合 → 敌人行动 → 循环
+Start Turn → Draw Cards → View Enemy Intent → Play Cards → End Turn → Enemy Action → Loop
 ```
 
-### 胜利条件
+### Victory Condition
 
-击败当前关卡所有敌人即可进入下一关。每关敌人会更强，但你也会获得更强力的卡牌。
-
----
-
-## 🛠️ 技术栈
-
-- **[.NET MAUI](https://dotnet.microsoft.com/apps/maui)** - 跨平台 UI 框架
-- **[C#](https://docs.microsoft.com/dotnet/csharp/)** - 编程语言
-- **[XAML](https://docs.microsoft.com/xamarin/xamarin-forms/xaml/)** - UI 标记语言
-- **[MVVM](https://docs.microsoft.com/xamarin/xamarin-forms/enterprise-application-patterns/mvvm)** - 架构模式
+Defeat all enemies in the current level to advance to the next. Each level's enemies become stronger, but you'll also gain more powerful cards.
 
 ---
 
-## 📜 开源协议
+## 🛠️ Tech Stack
 
-本项目采用 [MIT 协议](LICENSE) 开源。
-
----
-
-## 🤝 贡献指南
-
-欢迎提交 Issue 和 Pull Request！
-
-1. Fork 本仓库
-2. 创建你的功能分支 (`git checkout -b feature/amazing-feature`)
-3. 提交更改 (`git commit -m 'Add amazing feature'`)
-4. 推送到分支 (`git push origin feature/amazing-feature`)
-5. 打开 Pull Request
+- **[.NET MAUI](https://dotnet.microsoft.com/apps/maui)** - Cross-platform UI framework
+- **[C#](https://docs.microsoft.com/dotnet/csharp/)** - Programming language
+- **[XAML](https://docs.microsoft.com/xamarin/xamarin-forms/xaml/)** - UI markup language
+- **[MVVM](https://docs.microsoft.com/xamarin/xamarin-forms/enterprise-application-patterns/mvvm)** - Architecture pattern
 
 ---
 
-## 🙏 致谢
+## 📜 License
 
-- 灵感来源于 [Slay the Spire](https://www.megacrit.com/) (杀戮尖塔)
-- 感谢 .NET MAUI 团队提供的优秀跨平台框架
+This project is open source under the [MIT License](LICENSE).
+
+---
+
+## 🤝 Contributing
+
+Issues and Pull Requests are welcome!
+
+1. Fork this repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+## 🙏 Acknowledgments
+
+- Inspired by [Slay the Spire](https://www.megacrit.com/)
+- Thanks to the .NET MAUI team for the excellent cross-platform framework
 
 ---
 
 <p align="center">
-  <b>⭐ 如果这个项目对你有帮助，请给个 Star 支持一下！</b>
+  <b>⭐ If this project helps you, please give it a Star!</b>
 </p>
 
 <p align="center">
-  🎴 准备好你的卡牌，开始攀登吧！ ⚔️
+  🎴 Ready your cards and start climbing! ⚔️
 </p>
